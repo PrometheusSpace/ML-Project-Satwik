@@ -4,15 +4,12 @@ from keras.models import Sequential
 
 
 
-
 def build_improved_model(input_dim, output_dim, return_sequences):
-
     model = Sequential()
     model.add(LSTM(
         input_shape=(None, input_dim),
         units=output_dim,
         return_sequences=return_sequences))
-
     model.add(Dropout(0.2))
 
     model.add(LSTM(
